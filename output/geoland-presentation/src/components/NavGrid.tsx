@@ -44,7 +44,7 @@ const NavItem: React.FC<{ slide: NavSlide; index: number; isActive: boolean; onS
         {slide.backgroundMedia ? (
           isVideo ? (
             <video 
-              src={`${slide.backgroundMedia.includes('/') ? slide.backgroundMedia : `/assets/${slide.backgroundMedia}`}#t=0.1`} 
+              src={`${slide.backgroundMedia.includes('/') ? slide.backgroundMedia : `assets/${slide.backgroundMedia}`}#t=0.1`} 
               className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity" 
               preload="metadata"
               muted 
@@ -52,7 +52,7 @@ const NavItem: React.FC<{ slide: NavSlide; index: number; isActive: boolean; onS
             />
           ) : (
             <img 
-              src={`/assets/${slide.backgroundMedia}`} 
+              src={`assets/${slide.backgroundMedia}`} 
               className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity" 
               loading="lazy"
               onLoad={() => setIsLoaded(true)}
@@ -83,10 +83,10 @@ const NavItem: React.FC<{ slide: NavSlide; index: number; isActive: boolean; onS
 
 const NavGrid: React.FC<NavGridProps> = ({ isOpen, onClose, onSelect, currentIndex }) => {
   const allSlides = useMemo(() => [
-    { id: 'intro', title: 'PORTADA', backgroundMedia: 'portada2.mp4', index: -1 },
+    { id: 'intro', title: 'PORTADA', backgroundMedia: 'portada.mp4', index: -1 },
     ...slides.map((s, i) => ({ ...s, index: i })),
-    { id: 'outro', title: 'CIERRE', backgroundMedia: 'portada2.mp4', index: slides.length }
-  ], []);
+    { id: 'outro', title: 'CIERRE', backgroundMedia: 'portada.mp4', index: slides.length }
+  ], [slides]);
 
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = Math.ceil(allSlides.length / SLIDES_PER_PAGE);

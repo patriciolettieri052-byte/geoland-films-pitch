@@ -1,104 +1,501 @@
-export interface SlideData { id: number; title?: string; overline?: string; text: string; backgroundMedia: string; isTitleBlue?: boolean; overlayOpacity?: number; isBold?: boolean; isItalic?: boolean; titleSize?: string; variant?: "subtitulo" | "titulo" | "portada" | "portada81" | "portadafinal" | "texto" | "barras" | "barras-pro" | "apertura" | "apertura2" | "hub" | "backtest-stats" | "backtest-cities" | "numeric" | "business-units" | "reviews" | "neural-map"; align?: "left" | "center" | "right"; maxWidth?: string; ctaUrl?: string; ctaText?: string; footer?: string; }
+export interface SlideData {
+  id: number;
+  title?: string;
+  overline?: string;
+  text: string;
+  backgroundMedia: string;
+  isTitleBlue?: boolean;
+  overlayOpacity?: number;
+  isBold?: boolean;
+  isItalic?: boolean;
+  titleSize?: string;
+  variant?: "subtitulo" | "titulo" | "portada" | "portada81" | "portadafinal" | "texto" | "barras" | "barras-pro" | "apertura" | "apertura2" | "hub" | "backtest-stats" | "backtest-cities" | "numeric" | "business-units" | "reviews" | "neural-map" | "titulo-grande" | "titulo-chico" | "advisors" | "roadmap" | "soluciones-grid" | "diagrama-fuentes" | "diagrama-expansion" | "market" | "texto-arriba" | "titulo-cuerpo-bold" | "validation-hud";
+  align?: "left" | "center" | "right";
+  maxWidth?: string;
+  ctaUrl?: string;
+  ctaText?: string;
+  footer?: string;
+}
 
 export const slides: SlideData[] = [
-  { id: 1, variant: "apertura", overline: "The", title: "OVERVIEW", text: "The world changed. Real estate didn't.", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 2, title: "", text: "<span class='estilo-subtitulo block mb-2'>El real estate global vale USD 393,3 trillones</span>el mayor depósito de riqueza del planeta.", backgroundMedia: "3.mp4", overlayOpacity: 75 },
-  { id: 3, title: "", text: "<span class='estilo-subtitulo block mb-2'>Cada año se invierten entre  USD 700 a 900 billones</span>en real estate y  decenas de miles de millones  en farmland.", backgroundMedia: "4.png", overlayOpacity: 75 },
-  { id: 4, title: "", text: "<span class='estilo-subtitulo'>90% de los inversores<br>decide con información incompleta.</span>", backgroundMedia: "5.png", overlayOpacity: 0, align: "right", maxWidth: "1000px" },
-  { id: 5, title: "WASTING TIME AND MONEY IS NOT SMART.", text: "", backgroundMedia: "wasting_time.png", overlayOpacity: 60, variant: "subtitulo" },
-  { id: 6, title: "", text: "<span class='estilo-subtitulo'>No existe hasta hoy una forma simple de comparar oportunidades globalmente.</span>", backgroundMedia: "7.mp4", overlayOpacity: 0, align: "left", maxWidth: "1000px" },
-  { id: 7, title: "Procesos manuales que toman meses.", text: "", backgroundMedia: "8.png", overlayOpacity: 0, variant: "subtitulo", align: "right", maxWidth: "1000px" },
-  { id: 8, title: "", text: "<span class='estilo-subtitulo block mb-2'>Las mejores oportunidades se pierden</span>por falta de datos integrados, lentitud y decisiones basadas en intuición.", backgroundMedia: "9.png", overlayOpacity: 0, align: "left", maxWidth: "1000px" },
-  { id: 9, title: "Smart is not guessing.", text: "", backgroundMedia: "slide10.mp4", overlayOpacity: 60, variant: "subtitulo" },
-  { id: 10, title: "", text: "Hubo un tiempo en que usar un ordenador requería escribir comandos.<br/>Eso era DOS. Solo los expertos podían usarlo.", backgroundMedia: "11.png", overlayOpacity: 0, align: "right", maxWidth: "1000px" },
-  { id: 11, title: "", text: "Lo realmente revolucionario no fue eliminar la complejidad, sino ocultarla detrás de una interfaz simple.<br>Apple lo hizo con el diseño.  Microsoft lo hizo con Windows.", backgroundMedia: "slide12.png", overlayOpacity: 75 },
-  { id: 12, title: "", text: "Se sigue operando con lógica obsoleta.<br>Datos fragmentados, procesos desconectados y sin una inteligencia que unifique todo.", backgroundMedia: "13.mp4", overlayOpacity: 0, align: "right", maxWidth: "1000px" },
-  { id: 13, title: "Hasta ahora...", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 14, variant: "apertura2", title: "PRESENTAMOS:", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 15, title: "", text: "El Sistema de Inteligencia de Decisión", backgroundMedia: "fondo-portada3.mp4", overlayOpacity: 60, variant: "portada81" },
-  { id: 16, title: "", text: "<div class='text-left'><span class='estilo-subtitulo block mb-2'>El Sistema de Inteligencia de Decisión,</span> que combina la comprensión contextual de la IA con el rigor del software de precisión.<br/><br/>Diseñado para transformar información fragmentada en decisiones más rápidas, precisas y eficientes.</div>", backgroundMedia: "17.png", align: "right", maxWidth: "800px", overlayOpacity: 10 },
-  { id: 17, title: "", text: "<span class='estilo-subtitulo'>Analiza el mercado como un equipo de analistas expertos, comprende el objetivo del inversor, y entrega oportunidades evaluadas y priorizadas.</span>", backgroundMedia: "18-2.png", align: "left", maxWidth: "800px", overlayOpacity: 10 },
-  { id: 18, title: "", text: "<span class='estilo-subtitulo block mb-2'>No es un portal. No es un listado.</span>Es un Sistema de Inteligencia de Decisión impulsado por IA y Agentes.", backgroundMedia: "19.mp4", variant: "texto", align: "right", maxWidth: "1000px" },
-  { id: 19, title: "", text: "Para evaluar el mundo entero bajo un mismo standard, en segundos.", backgroundMedia: "20.mp4", variant: "texto", align: "right", maxWidth: "1000px" },
-  { id: 20, variant: "apertura", overline: "The", title: "ADVANTAGE", text: "SMART IS CLARITY, EVERYTHING ELSE IS NOISE.", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 21, title: "Smart is when technology thinks like an investor.", text: "", backgroundMedia: "103.mp4", overlayOpacity: 60, variant: "subtitulo" },
-  { id: 22, title: "", text: "Existen plataformas que cubren partes del problema.Pero ninguna ha construido la infraestructura para evaluar y comparar inversiones globalmente bajo un estándar unificado. GEOLAND es la primera en hacerlo.", backgroundMedia: "22.mp4" },
-  { id: 23, title: "Zillow / Idealista (portales — locales)", text: "Listings (marketplaces locales) — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗  Comparación global — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ Multi-activo — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ Capa de decisión", backgroundMedia: "23.png", variant: "barras" },
-  { id: 24, title: "HouseCanary / PriceHubble (AVMs — local / multi-país fragmentado)", text: "Valoración automatizada — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ Comparación global — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ Multi-activo — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ Capa de decisión", backgroundMedia: "Use_the_uploaded_image_as_the__Kling_26_Pro_11856.mp4", variant: "barras" },
-  { id: 25, title: "Mashvisor (análisis — EE.UU. / mercado único)", text: "Análisis de inversión — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ Comparación global — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ Multi-activo — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ Capa de decisión (básica)—✓ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗", backgroundMedia: "Use_the_uploaded_image_as_the__Kling_26_Pro_14333.mp4", variant: "barras" },
-  { id: 26, variant: "apertura", overline: "The", title: "GAP", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 27, title: "", text: "<span class='estilo-subtitulo block mb-2'>FALTAN SISTEMAS QUE PERMITAN:</span><div class='flex flex-col items-end gap-3 mt-4 font-bold text-right'><div class='flex items-start gap-3 justify-end'><span class='text-red-500'>✕</span><span class='text-white'>Comparar inversiones globales bajo un estándar unificado</span></div><div class='flex items-start gap-3 justify-end'><span class='text-red-500'>✕</span><span class='text-white'>Integrar Real Estate y Farmland en una misma decisión</span></div><div class='flex items-start gap-3 justify-end'><span class='text-red-500'>✕</span><span class='text-white'>Convertir datos en decisiones accionables</span></div><div class='flex items-start gap-3 justify-end'><span class='text-red-500'>✕</span><span class='text-white'>Intermediar con el activo para facilitar la gestión al inversor</span></div></div>", backgroundMedia: "104-2.png", overlayOpacity: 75, align: "right", maxWidth: "1000px" },
-  { id: 28, title: "GEOLAND SISTEMA global de decisión", text: "Comparación global — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ Multi-activo (RE + Farmland) — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ IA aplicada a decisión — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ Capa de decisión unificada— ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ Gestión de intermediación con el activo — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓", backgroundMedia: "27.png", variant: "barras" },
-  { id: 29, title: "", text: "<span class='estilo-subtitulo'>No competimos con players existentes.<br/>Construimos la capa que hoy no existe.</span>", backgroundMedia: "Use_the_uploaded_image_as_the__Kling_26_Pro_26480.mp4" },
-  { id: 30, title: "", text: "<span class='estilo-subtitulo block mb-2'>WHITE SPACE</span>El espacio de comparación multi-mercado, multi-activo con IA generativa y agentes  está genuinamente vacío.", backgroundMedia: "29.mp4" },
-  { id: 31, variant: "apertura", overline: "The", title: "SOLUTION", text: "SMART IS MAKING HARD DECISIONS SIMPLE.", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 32, title: "", text: "<span class='estilo-subtitulo'>GEOLAND ES UN SISTEMA GLOBAL DE INTELIGENCIA DE DECISIÓN INNOVADOR, PARA INVERSORES EN REAL ESTATE Y FARMLAND, QUE COMBINA IA, AGENTES y SOFTWARE DE PRECISIÓN</span>", backgroundMedia: "Use_the_uploaded_image_as_the__Kling_26_Pro_29511.mp4" },
-  { id: 33, title: "", text: "<div class='flex justify-end' style='min-width: 80vw;'><h2 class='text-xl md:text-3xl italic tracking-[0.2em] uppercase font-extralight text-white mb-8 max-w-3xl text-right pr-24 md:pr-48'>Funciona como un equipo completo de analistas.</h2></div>", backgroundMedia: "analistas.png", overlayOpacity: 60 },
-  { id: 34, title: "", text: "<span class='estilo-subtitulo'>Un solo lenguaje para todos los mercados del mundo.</span>", backgroundMedia: "33.png", maxWidth: "1400px" },
-  { id: 35, title: "", text: "<span class='estilo-subtitulo block mb-2'>EL PRIMER COMPARADOR UNIVERSAL DE ACTIVOS</span>Compara un campo en la Pampa con un piso en Dubái.<br>Con la misma precisión.", backgroundMedia: "34.mp4", align: "right", maxWidth: "1000px", overlayOpacity: 0 },
-  { id: 36, title: "", text: "<span class='estilo-subtitulo'>Te permite invertir donde es rentable, no solamente en tu entorno.</span>", backgroundMedia: "36.png", overlayOpacity: 75 },
-  { id: 38, title: "", text: "<b>Newton</b><br>Convirtió el caos en leyes claras.", backgroundMedia: "newton.mp4", overlayOpacity: 75 },
-  { id: 39, title: "", text: "<b>Steve Jobs</b><br>Ocultó ingeniería compleja detrás de una interfaz intuitiva.", backgroundMedia: "steve.mp4", overlayOpacity: 75 },
-  { id: 40, title: "", text: "<b>Bill Gates</b><br>Convirtió comandos técnicos en ventanas accesibles para millones.", backgroundMedia: "bill.mp4", overlayOpacity: 75 },
-  { id: 41, title: "", text: "<span class='estilo-subtitulo block mb-2'>La simplicidad organiza la complejidad.</span>Eso es lo que hace Geoland.", backgroundMedia: "Use_the_uploaded_image_as_the__Kling_26_Pro_61696.mp4" },
-  { id: 42, variant: "apertura", overline: "The", title: "TARGET", text: "BUILT FOR REAL DECISION-MAKERS.", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 43, title: "", text: "", backgroundMedia: "ChatGPT Image 19 abr 2026, 02_18_45 p.m..png", overlayOpacity: 70, variant: "hub" },
-  { id: 44, title: "RECURRENCIA", text: "", backgroundMedia: "46.png", overlayOpacity: 60, variant: "subtitulo" },
-  { id: 45, title: "", text: "<span class='estilo-subtitulo block mb-2'>Invertir es un proceso, no un evento.</span>Los inversores comparan múltiples oportunidades antes de decidir.", backgroundMedia: "105.png", variant: "texto" },
-  { id: 46, title: "FRECUENCIA DE USO", text: "Retail activo | 2–8 veces al mes | — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ ;; Fondos / developers | Uso semanal / continuo | — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✗ — ✗ — ✗ — ✗ ;; Institucional / API | Monitoreo permanente | — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✗ ", backgroundMedia: "47.png", variant: "barras-pro", footer: "* Basado en uso de herramientas existentes hoy en día y de nuestros early users" },
-  { id: 47, title: "EARLY USERS FEEDBACK", text: "21 Beta Testers | Perú, Argentina, México, España y Dubai | Retail y Family Offices | 17 de ellos demostraron voluntad de pagar en un futuro por el producto.", backgroundMedia: "48.mp4", variant: "reviews" },
-  { id: 48, variant: "apertura", title: "CIUDADES", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 49, title: "", text: "<div class='absolute left-1/2 -translate-x-1/2 w-[100vw] flex justify-center'><h2 class='font-cormorant text-[1.2rem] md:text-[2.5rem] lg:text-[2.8rem] font-normal uppercase tracking-[0.2em] text-white whitespace-nowrap'>MADRID - MIAMI - BS AS - DUBAI</h2></div>", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 50, title: "", text: "<span class='estilo-subtitulo'>¿Por qué elegimos estar primero en estas ciudades?</span>", backgroundMedia: "51.mp4" },
-  { id: 51, title: "", text: "La selección de ciudades no fue aleatoria. Ha sido una decisión de ingeniería financiera.", backgroundMedia: "52.png" },
-  { id: 52, title: "", text: "<b>Representan los escenarios más exigentes del mundo.<br>Si funciona aquí, funciona en cualquier mercado.", backgroundMedia: "53.png" },
-  { id: 53, title: "", text: "<b>Madrid</b><br>Complejidad regulatoria<br><br><b>Miami</b><br>Complejidad operativa<br><br><b>Dubái</b><br>Máxima eficiencia<br><br><b>Buenos Aires</b><br>Máxima inestabilidad", backgroundMedia: "106.png", variant: "texto" },
-  { id: 54, variant: "apertura", overline: "La", title: "MONETIZACIÓN", text: "SMART IS BUILDING VALUE BEFORE CHARGING FOR IT.", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 55, title: "", text: "Primero construimos la audiencia. Después monetizamos el valor.", backgroundMedia: "Use_the_uploaded_image_as_the__Kling_26_Pro_98900.mp4" },
-  { id: 56, variant: "apertura", title: "FREEMIUM MASIVO", text: "Smart is growing fast.", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 57, title: "", text: "<b>Acceso gratuito global para acelerar la adopción.</b><br>Pero... con límites de uso", backgroundMedia: "acceso.mp4", overlayOpacity: 75 },
-  { id: 58, title: "", text: "<b>OBJETIVO:</b><br>Construir la mayor base posible de inversores activos.", backgroundMedia: "57.mp4", overlayOpacity: 75 },
-  { id: 59, title: "", text: "<span class='estilo-subtitulo'>El freemium limita y empuja al pago.<br>La conversión ocurre de forma natural</span>", backgroundMedia: "58.png", overlayOpacity: 75 },
-  { id: 60, title: "Suscripción (SaaS)", text: "USD 49/mes · USD 450/año Acceso a la plataforma para analizar y comparar inversiones globales → modelo masivo y recurrente — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ ", backgroundMedia: "ChatGPT Image 19 abr 2026, 02_10_11 p.m..png", overlayOpacity: 75, variant: "barras" },
-  { id: 61, title: "Plan profesional / enterprise", text: "USD 1.490 – 2.990 / año Mayor profundidad de análisis y uso intensivo para inversores activos → mayor valor por usuario (ARPU) — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✗ — ✗ ", backgroundMedia: "ChatGPT Image 19 abr 2026, 02_11_28 p.m..png", overlayOpacity: 75, variant: "barras" },
-  { id: 62, title: "AI Planning", text: "USD 99 – 199 por proyecto Estructuración completa de inversiones con IA → monetización por decisión — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✗ — ✗ — ✗ — ✗ — ✗ ", backgroundMedia: "ChatGPT Image 19 abr 2026, 02_13_46 p.m..png", overlayOpacity: 75, variant: "barras" },
-  { id: 63, title: "Data & API / White-label", text: "USD 5K – 10K+ / año Integración del motor GEOLAND en bancos, fondos y plataformas → capa de escala institucional — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✓ — ✗ — ✗ — ✗ — ✗ — ✗ — ✗ ", backgroundMedia: "ChatGPT Image 19 abr 2026, 02_16_08 p.m..png", overlayOpacity: 75, variant: "barras" },
-  { id: 66, variant: "apertura2", title: "ESCENARIO AÑO 1", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 68, title: "", text: "<div class='flex flex-col items-center justify-center space-y-4 md:space-y-8 py-10'><span class='text-geoland-blue tracking-[0.5em] text-sm md:text-xl uppercase font-bold'>SAM DIGITAL</span><h2 class='text-6xl md:text-9xl font-cormorant font-bold text-white tracking-tighter leading-none'>10M – 48M</h2><p class='text-lg md:text-2xl font-light text-white/50 tracking-[0.15em] uppercase max-w-2xl'>Inversores digitales activos</p></div>", backgroundMedia: "id68.mp4", overlayOpacity: 75 },
-  { id: 69, title: "", text: "<div class='flex flex-col items-center justify-center space-y-8 py-4'><span class='text-geoland-blue tracking-[0.5em] text-sm md:text-xl uppercase font-bold text-center'>CAPTACIÓN INICIAL (AÑO 1)</span><div class='grid grid-cols-2 gap-x-12 gap-y-8 md:gap-x-24 md:gap-y-12'><div class='flex flex-col items-center'><span class='text-4xl md:text-6xl font-cormorant font-bold text-white'>0,02% – 0,05%</span><span class='text-[0.6rem] md:text-xs text-white/40 tracking-widest uppercase mt-2 text-center'>SOM ESTIMADO DEL SAM DIGITAL</span></div><div class='flex flex-col items-center'><span class='text-4xl md:text-6xl font-cormorant font-bold text-white'>3.000 – 20.000</span><span class='text-[0.6rem] md:text-xs text-white/40 tracking-widest uppercase mt-2 text-center'>USUARIOS REGISTRADOS</span></div><div class='flex flex-col items-center'><span class='text-4xl md:text-6xl font-cormorant font-bold text-white'>90 – 1.000</span><span class='text-[0.6rem] md:text-xs text-white/40 tracking-widest uppercase mt-2 text-center'>USUARIOS PAGOS</span></div><div class='flex flex-col items-center'><span class='text-4xl md:text-6xl font-cormorant font-bold text-white'>3% – 5%</span><span class='text-[0.6rem] md:text-xs text-white/40 tracking-widest uppercase mt-2 text-center'>CONVERSIÓN ESPERADA</span></div></div></div>", backgroundMedia: "id69.mp4", overlayOpacity: 75 },
-  { id: 70, title: "", text: "<div class='flex flex-col items-center justify-center space-y-8 py-4'><span class='text-geoland-blue tracking-[0.5em] text-sm md:text-xl uppercase font-bold'>DISTRIBUCIÓN DE PAGOS</span><div class='flex flex-col md:flex-row gap-12 md:gap-24'><div class='flex flex-col items-center'><span class='text-6xl md:text-8xl font-cormorant font-bold text-white'>70%</span><span class='text-sm md:text-lg text-white/40 tracking-widest uppercase mt-2'>PLAN SAAS</span></div><div class='flex flex-col items-center'><span class='text-6xl md:text-8xl font-cormorant font-bold text-white'>30%</span><span class='text-sm md:text-lg text-white/40 tracking-widest uppercase mt-2'>PROFESSIONAL</span></div></div></div>", backgroundMedia: "70.png", overlayOpacity: 75 },
-  { id: 71, title: "", text: "<div class='flex flex-col items-center justify-center space-y-8 py-4'><span class='text-geoland-blue tracking-[0.5em] text-sm md:text-xl uppercase font-bold text-center mb-4'>INGRESOS ESTIMADOS (AÑO 1)</span><div class='grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-x-16'><div class='flex flex-col items-center'><span class='text-geoland-blue tracking-[0.3em] text-[0.7rem] md:text-xs uppercase font-bold mb-2'>BASE CASE (REALISTA)</span><span class='text-4xl md:text-5xl lg:text-6xl font-cormorant font-bold text-white'>~$100K</span><span class='text-[0.6rem] md:text-xs text-white/40 tracking-widest uppercase mt-4 text-center leading-relaxed max-w-[200px]'>ADOPCIÓN INICIAL + VALIDACIÓN DEL MODELO</span></div><div class='flex flex-col items-center'><span class='text-geoland-blue tracking-[0.3em] text-[0.7rem] md:text-xs uppercase font-bold mb-2 text-center'>MID CASE (EJECUCIÓN SÓLIDA)</span><span class='text-4xl md:text-5xl lg:text-6xl font-cormorant font-bold text-white'>~$400K – $600K</span><span class='text-[0.6rem] md:text-xs text-white/40 tracking-widest uppercase mt-4 text-center leading-relaxed max-w-[200px]'>CONVERSIÓN ESTABLE + CRECIMIENTO ORGÁNICO</span></div><div class='flex flex-col items-center'><span class='text-geoland-blue tracking-[0.3em] text-[0.7rem] md:text-xs uppercase font-bold mb-2'>HIGH CASE (TRACCIÓN FUERTE)</span><span class='text-4xl md:text-5xl lg:text-6xl font-cormorant font-bold text-white'>~$1.0M</span><span class='text-[0.6rem] md:text-xs text-white/40 tracking-widest uppercase mt-4 text-center leading-relaxed max-w-[200px]'>ALTA ADOPCIÓN + UPGRADE A PROFESSIONAL</span></div></div></div>", backgroundMedia: "id71.mp4", overlayOpacity: 75 },
-  { id: 72, title: "", text: "<div class='flex flex-col items-center justify-center space-y-4 md:space-y-8 py-10'><span class='text-geoland-blue tracking-[0.5em] text-sm md:text-xl uppercase font-bold'>PROYECCIÓN DE INGRESOS (AÑO 2)</span><h2 class='text-6xl md:text-9xl font-cormorant font-bold text-white tracking-tighter leading-none'>€1.5M – €3M</h2><p class='text-lg md:text-2xl font-light text-white/50 tracking-[0.15em] uppercase max-w-2xl text-center'>Expansión global y activación de capas de integración (API)</p></div>", backgroundMedia: "72.mp4", overlayOpacity: 75 },
-  { id: 74, variant: "apertura", title: "¿WHY NOW?", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 75, variant: "subtitulo", title: "A REAL WHITE SPACE.<br/>SMART IS BUILDING WHAT DOESN'T EXIST YET.", text: "", backgroundMedia: "whitespace.mp4", overlayOpacity: 60 },
-  { id: 76, variant: "subtitulo", title: "¿CÓMO SABEMOS QUE LOS RESULTADOS QUE LOGRAMOS SON BUENOS?", text: "", backgroundMedia: "77.png", overlayOpacity: 60 },
-  { id: 77, title: "", text: "<span class='estilo-subtitulo block mb-2 font-bold'>BACKTESTING</span>Se realizaron backtests sobre cientos de activos históricos y el sistema detecta de forma consistente oportunidades con retornos por encima del promedio del mercado.", backgroundMedia: "78.png" },
-  { id: 78, variant: "subtitulo", align: "right", title: "Qué habría decidido GEOLAND VS<br/>qué hicieron los inversores", text: "", backgroundMedia: "backtesting_intro.mp4", overlayOpacity: 40 },
-  { id: 79, variant: "backtest-stats", title: "Cien decisiones de capital reales en Madrid, Miami, Buenos Aires y Dubai entre 2018 y 2023, reconstruidas con datos públicos disponibles antes de cada transacción", text: "DETECTADOS EX-ANTE|86/100|señal concluyente con datos públicos|green ;; NO DETECTADOS|14/100|límites declarados del modelo|white ;; TIPOLOGÍAS DE ERROR|10|estrategia · microzona · timing · divisa · costes · perfil · salida|red ;; TRAZABILIDAD MEDIA|86.1/100|fuentes Nivel 1-2 en el 100% de los casos|white", backgroundMedia: "78.png", overlayOpacity: 90 },
-  { id: 80, variant: "backtest-cities", title: "DESGLOSE POR CIUDAD", text: "Madrid|24/28|85.7|Mayor densidad de datos catastrales. Fallos: regulación súbita y microzonas sin historial. ;; Miami|22/27|81.5|Piso más bajo: clima, Surfside y señales mixtas en 2022 superaron lo modelable. ;; Buenos Aires|21/23|91.3|Techo del sample. Patrón ARS/USD extraordinariamente verificable ex-ante. ;; Dubai|19/22|86.4|Velocidad de ciclo +4%/trimestre crea señales de timing menos concluyentes.", backgroundMedia: "78.png", overlayOpacity: 90, ctaUrl: "/geoland_backtest_consolidado.html", ctaText: "Ver Backtest Consolidado" },
-  { id: 81, variant: "subtitulo", title: "SMART IS MAKING HARD THINGS SIMPLE", text: "", backgroundMedia: "80.png", overlayOpacity: 60 },
-  { id: 82, variant: "subtitulo", title: "SMART IS SAVING TIME AND MONEY.", text: "", backgroundMedia: "smart.mp4", overlayOpacity: 70 },
-  { id: 83, title: "", text: "THE SMARTEST WAY TO INVEST.", backgroundMedia: "portada2.mp4", overlayOpacity: 60, variant: "portada81" },
-  { id: 88, title: "", text: "<span class='estilo-subtitulo'>En un mundo lleno de oportunidades, la ventaja real es saber decidir bien.</span>", backgroundMedia: "86.mp4" },
-  { id: 89, variant: "apertura", title: "TEAM", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 90, align: "center", maxWidth: "1400px", title: "", text: "<div class='flex flex-col md:flex-row gap-16 justify-center items-start w-full max-w-[1200px] mx-auto mt-4'><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='/team/pato_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 class='text-xl md:text-2xl font-bold font-jost text-white mb-2 uppercase tracking-widest'>Patricio Lettieri</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6'>Co-Founder - Data Infrastucture</h4><p class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-justify hyphens-auto'>Especialista en data, análisis e IA aplicada, con más de 15 años de experiencia en marketing analítico y operaciones estratégicas para marcas como John Deere y Porsche. En GEOLAND conecta fuentes de datos, modelos inteligentes y ejecución operativa para transformar información compleja en decisiones claras y accionables.</p></div><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='/team/pepe_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 scale-[1.15] origin-top [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 class='text-xl md:text-2xl font-bold font-jost text-white mb-2 uppercase tracking-widest'>José Luis Curcio</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6'>Co-Founder, Product vision & Strategy</h4><p class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-justify hyphens-auto'>Publicista, estratega y director creativo con más de 18 años innovando para marcas globales como Coca-Cola, Ford y Samsung. Conceptualizó GEOLAND y lidera la visión, el diseño estratégico y la orquestación del equipo, transformando complejidad, creatividad y tecnología en un sistema inteligente de decisión.</p></div></div>", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 91, align: "center", maxWidth: "1400px", title: "", text: "<div class='flex flex-col md:flex-row gap-16 justify-center items-start w-full max-w-[1200px] mx-auto mt-4'><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='/team/juancarlos_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 scale-[1.25] origin-top [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 class='text-xl md:text-2xl font-bold font-jost text-white mb-2 uppercase tracking-widest'>Juan Carlos Casalderrey</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6'>Partner - Engineering / Mythology Labs</h4><p class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-justify hyphens-auto'>Formado en Arquitectura y Diseño de Sistemas y Contratos Complejos en Tecnología. Desarrollador, consultor técnico y Co-Founder de Mythology Labs. En GEOLAND, aporta criterio técnico, liderazgo operativo y capacidad para ejecutar una plataforma robusta, escalable y orientada a negocio.</p></div><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='/team/damian_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 class='text-xl md:text-2xl font-bold font-jost text-white mb-2 uppercase tracking-widest'>Damián Scheck</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6'>Partner - Engineering / Mythology Labs</h4><p class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-justify hyphens-auto'>Analista de Sistemas de Computación, Licenciado en Sistemas, desarrollador de software, Co-Founder y CTO de Mythology Labs. En GEOLAND, lidera la arquitectura técnica, la calidad del código y el desarrollo de una plataforma robusta, escalable y segura, preparada para crecer con estándares profesionales de ingeniería.</p></div></div>", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 92, variant: "apertura", title: "SOURCES", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 93, title: "", text: "<div class='text-[0.7rem] md:text-xs italic leading-tight text-white/60 text-center max-w-4xl mx-auto'>Sources & Market References Global Real Estate & Capital Markets  Savills — Global Real Estate Value Report  JLL — Global Capital Markets Outlook  CBRE — Global Investment Volumes  Knight Frank — The Wealth Report Farmland & Agricultural Assets  FAO — Food and Agriculture Organization of the United Nations  USDA — Economic Research Service  NCREIF — Farmland Index PropTech, Data & Investment Behavior  McKinsey — Global Real Estate & Analytics Insights  PwC — Emerging Trends in Real Estate  Deloitte — PropTech & Real Estate Analytics SaaS, AI & Market Sizing  Bessemer Venture Partners — State of the Cloud  Andreessen Horowitz (a16z) — Market Sizing & SaaS Playbooks  Y Combinator — Startup Library Valuation & AI Companies  PitchBook — SaaS & PropTech Valuation Multiples  CB Insights — AI & PropTech Market Reports  Harvard Business Review · MIT Sloan — AI & Decision-Making</div>", backgroundMedia: "91.png" },
-  { id: 94, variant: "apertura", overline: "The", title: "VALUATION", text: "Building the next frontier of real estate value.", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 95, title: "", text: "<div class='flex flex-col items-center justify-center space-y-8 py-4'><span class='text-geoland-blue tracking-[0.5em] text-sm md:text-xl uppercase font-bold text-center'>PRE-MONEY VALUATION (2026)</span><div class='flex flex-col items-center'><span class='text-6xl md:text-9xl font-cormorant font-bold text-white tracking-tighter leading-none'>$1.7M</span><span class='text-[0.6rem] md:text-xs text-white/40 tracking-[0.3em] uppercase mt-4 text-center'>SEED EARLY STAGE / FUNCTIONAL MVP</span></div></div>", backgroundMedia: "93.png" },
-  { id: 96, variant: "apertura2", title: "VALORIZACIÓN PROYECTADA AL FINAL DEL AÑO 1", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 97, title: "", text: "<div class='flex flex-col items-center justify-center space-y-8 py-4'><span class='text-geoland-blue tracking-[0.5em] text-sm md:text-xl uppercase font-bold text-center'>PROJECTED VALUATION (YEAR 1)</span><div class='flex flex-col items-center'><span class='text-6xl md:text-9xl font-cormorant font-bold text-white tracking-tighter leading-none'>€5M – €10M</span><span class='text-[0.6rem] md:text-xs text-white/40 tracking-[0.3em] uppercase mt-4 text-center'>POST-REVENUE / POST-TRACTION GROWTH</span></div></div>", backgroundMedia: "Use_the_uploaded_image_as_the__Kling_26_Pro_52997.mp4" },
-  { id: 98, variant: "apertura2", title: "¿QUÉ BUSCAMOS?", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 99, title: "", text: "<div class='flex flex-col items-center justify-center space-y-8 py-4'><span class='text-geoland-blue tracking-[0.5em] text-sm md:text-xl uppercase font-bold text-center mb-4'>INVESTMENT OPPORTUNITY</span><div class='grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-x-16'><div class='flex flex-col items-center'><span class='text-geoland-blue tracking-[0.3em] text-[0.7rem] md:text-xs uppercase font-bold mb-2 text-center'>CAPITAL BUSCADO</span><span class='text-5xl md:text-7xl font-cormorant font-bold text-white'>$295K</span></div><div class='flex flex-col items-center'><span class='text-geoland-blue tracking-[0.3em] text-[0.7rem] md:text-xs uppercase font-bold mb-2 text-center'>EQUITY OFRECIDO</span><span class='text-5xl md:text-7xl font-cormorant font-bold text-white'>10%</span></div><div class='flex flex-col items-center'><span class='text-geoland-blue tracking-[0.3em] text-[0.7rem] md:text-xs uppercase font-bold mb-2 text-center'>POST-MONEY VAL.</span><span class='text-5xl md:text-7xl font-cormorant font-bold text-white'>$1.95M</span></div></div></div>", backgroundMedia: "97.png" },
-  { id: 100, variant: "apertura2", title: "USO DE LOS FONDOS", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 101, variant: "subtitulo", title: "Campaña pre-lanzamiento<br/>Escalar ciudades<br/>cyber seguridad<br/>Perfeccionar y blindar la infraestructura", text: "", backgroundMedia: "99.png", overlayOpacity: 60 },
-  { id: 102, variant: "apertura2", title: "Enterprise-grade scalability", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 103, variant: "subtitulo", title: "El Real Estate es solo el comienzo. Nuestra infraestructura está preparada para múltiples mercados de alto valor", text: "", backgroundMedia: "escala.mp4", overlayOpacity: 70 },
-  { id: 104, variant: "numeric", text: "80%|UNIVERSAL|Motor de decisión, agentes, scoring. ;; 20%|CONTEXTO|Datos y lógica específica por industria.", backgroundMedia: "escala2.mp4", overlayOpacity: 70 },
-  { id: 105, variant: "business-units", title: "Esto nos permite extendernos rápidamente a:", text: "Logistics|Optimización de redes globales, asignando rutas, tiempos y capacidad de forma eficiente ;; Talent|Matching estratégico de perfiles, identificando quién tiene mayor probabilidad de éxito en un rol específico ;; Retail|Expansión y ubicación, determinando dónde un negocio tiene mayor probabilidad de funcionar ;; Film|Selección de locaciones a nivel global, encontrando el lugar óptimo según estética, logística y viabilidad real para productoras cinematográficas ;; Travel|Decide el viaje óptimo completo — vuelos, hotel, ubicación y experiencia — en base a todas las preferencias del usuario, optimizando cada variable como un único sistema", backgroundMedia: "escala3.png", overlayOpacity: 70 },
-  { id: 106, variant: "subtitulo", title: "UN SISTEMA<br/>MÚLTIPLES INDUSTRIAS", text: "", backgroundMedia: "", overlayOpacity: 0 },
-  { id: 107, variant: "subtitulo", title: "SMART IS INVESTING BEFORE THE REST OF THE MARKET UNDERSTANDS IT.", text: "", backgroundMedia: "100.png", overlayOpacity: 60 },
-  { id: 108, variant: "portadafinal", title: "", text: "", backgroundMedia: "portada2.mp4", overlayOpacity: 60 },
-  { id: 109, variant: "neural-map", title: "", text: "", backgroundMedia: "", overlayOpacity: 0 },
+  {
+    id: 1,
+    title: "PROBLEM",
+    text: "",
+    variant: "titulo-grande",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 2,
+    title: "EN EL MUNDO SE GENERAN 402M DE TERABYTES DE INFORMACIÓN POR DÍA.",
+    text: "Pero las decisiones más importantes todavía dependen de sistemas fragmentados.<br/>— Exploding Topics.",
+    variant: "titulo-grande",
+    backgroundMedia: "3.mp4",
+    overlayOpacity: 45,
+    maxWidth: "1000px"
+  },
+  {
+    id: 3,
+    title: "",
+    text: "30% | IDC | Tiempo perdido por profesionales buscando y organizando información ;; 40% | Techdata | De empresas reporta pérdidas por datos fragmentados.",
+    variant: "numeric",
+    backgroundMedia: "4.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 4,
+    title: "3% DEL BENEFICIO ANUAL PERDIDO",
+    text: "Por malas decisiones y datos fragmentados.<br/>— Gartner.",
+    variant: "titulo-grande",
+    backgroundMedia: "5.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 5,
+    title: "USD 95B DE PÉRDIDAS EN LOGÍSTICA",
+    text: "Por año sólo en Estados Unidos por ineficiencias.<br/>— McKinsey.",
+    variant: "titulo-grande",
+    backgroundMedia: "6.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 6,
+    title: "USD 11B DE PÉRDIDAS EN LA INDUSTRIA AÉREA",
+    text: "En 2025 por ineficiencias operativas y fragmentación en supply chain.<br/>— IATA + Oliver Wyman.",
+    variant: "titulo-grande",
+    backgroundMedia: "7.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 7,
+    title: "EN CINE, UN SOLO DÍA DE RETRASO PUEDE SIGNIFICAR CIENTOS DE MILES DE EUROS PERDIDOS.",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "8.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 8,
+    title: "EN UN MERCADO GLOBAL DE USD 360B ANUALES.",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "9.png",
+    overlayOpacity: 45
+  },
+  {
+    id: 9,
+    title: "+300.000 PRODUCTORAS EN EL MUNDO",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "10.png",
+    overlayOpacity: 45
+  },
+  {
+    id: 10,
+    title: "+9.500 PELICULAS A NIVEL GLOBAL POR AÑO",
+    text: "SIN CONTAR: series, publicidad, branded content, eventos, fashion productions,<br/>streaming content.",
+    variant: "titulo-grande",
+    backgroundMedia: "11.png",
+    overlayOpacity: 45
+  },
+  {
+    id: 11,
+    title: "MILLONES DE LOCACIONES Y DECISIONES<br/>OPERACIONALES CADA AÑO.",
+    text: "Eso significa:",
+    variant: "texto-arriba",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 12,
+    title: "MERCADO FRAGMENTADO",
+    text: "Hoy las búsquedas de locaciones operan de forma fragmentada, combinando<br/>scouts, referencias visuales, contactos y análisis humanos en procesos que pueden<br/>llevar semanas o incluso meses para encontrar la locación adecuada.",
+    variant: "titulo-chico",
+    backgroundMedia: "13.png",
+    overlayOpacity: 45
+  },
+  {
+    id: 13,
+    title: "EL PROBLEMA REAL",
+    text: "<strong>La industria NO tiene un sistema global de decisión estandarizado.</strong><br/>Tiene: imágenes, bases dispersas, scouts, intuición, contactos, y mucha fricción.",
+    variant: "titulo-chico",
+    backgroundMedia: "14.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 14,
+    title: "NINGUNA ORGANIZA LA DECISIÓN OPERACIONAL COMPLETA.",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "15.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 15,
+    title: "THE IDEA",
+    text: "",
+    variant: "titulo-grande",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 16,
+    title: "DURANTE AÑOS, LAS EMPRESAS CONSTRUYERON SISTEMAS PARA ALMACENAR DATOS.",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "17.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 17,
+    title: "DESPUÉS, PARA PROCESARLOS.",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "18.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 18,
+    title: "AHORA, VIENE LA CAPA QUE FALTA.",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 19,
+    title: "LA DE DECISIÓN.",
+    text: "Los datos por sí solos no hacen al mundo más inteligente.<br/>Las decisiones que tomamos con ellos sí.",
+    variant: "titulo-grande",
+    backgroundMedia: "20.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 20,
+    title: "PRESENTAMOS:",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 21,
+    text: "",
+    variant: "portada",
+    backgroundMedia: "22.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 22,
+    title: "DECISION SYSTEM FOR FILM PRODUCTION",
+    text: "Un sistema de inteligencia de decisión para producción cinematográfica que combina la comprensión contextual de la IA con el rigor del software de precisión, diseñado para encontrar la mejor locación para cada escena, cruzando lo que la producción busca visualmente con lo que realmente necesita para rodar: permisos, costos, logística, clima, luz e infraestructura.",
+    variant: "titulo-chico",
+    backgroundMedia: "23.png",
+    overlayOpacity: 45,
+    align: "right",
+    maxWidth: "780px"
+  },
+  {
+    id: 23,
+    title: "NO ES UN PORTAL.<br/>NO ES UN DASHBOARD.<br/>NO ES UNA HERRAMIENTA DE BÚSQUEDA.",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 24,
+    title: "",
+    text: "Puedes iniciar un análisis describiendo una escena, conversando con el agente, subiendo una referencia visual o cargando un guion técnico.",
+    variant: "texto",
+    backgroundMedia: "25.png",
+    overlayOpacity: 35,
+    align: "left",
+    maxWidth: "600px"
+  },
+  {
+    id: 25,
+    title: "",
+    text: "Luego, el <strong>Production Strategy Vector</strong> transforma las necesidades de la escena en un perfil inteligente para comparar locaciones por viabilidad, eficiencia y compatibilidad real de producción.",
+    variant: "texto",
+    backgroundMedia: "26.png",
+    overlayOpacity: 35,
+    align: "right",
+    maxWidth: "600px"
+  },
+  {
+    id: 26,
+    title: "",
+    text: "GEOLAND organiza los resultados en cards inteligentes, rankeadas por G-Score y alineadas con las prioridades reales de producción.",
+    variant: "texto",
+    backgroundMedia: "27.png",
+    overlayOpacity: 35,
+    align: "left",
+    maxWidth: "600px"
+  },
+  {
+    id: 27,
+    title: "",
+    text: "Al seleccionar una card, GEOLAND abre un dashboard profundo con el análisis completo de la locación: G-Score, costes, luz, permisos, riesgos, viabilidad y próximos pasos.",
+    variant: "texto",
+    backgroundMedia: "28.png",
+    overlayOpacity: 35,
+    align: "right",
+    maxWidth: "660px"
+  },
+  {
+    id: 28,
+    title: "",
+    text: "<strong>Mis Proyectos</strong> centraliza escenas, búsquedas y locaciones guardadas en un espacio operativo con avances, permisos, equipo local, logística y próximos pasos.",
+    variant: "texto",
+    backgroundMedia: "29.png",
+    overlayOpacity: 35,
+    align: "left",
+    maxWidth: "600px"
+  },
+  {
+    id: 29,
+    title: "",
+    text: "Incluso, puedes activar una locación y contactar desde GEOLAND a profesionales verificado para validarla, prepararla y convertirla en una opción lista para rodar.",
+    variant: "texto",
+    backgroundMedia: "30.png",
+    overlayOpacity: 35,
+    align: "right",
+    maxWidth: "600px"
+  },
+  {
+    id: 30,
+    title: "PROOF",
+    text: "",
+    variant: "titulo-grande",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 31,
+    title: "La locación linda que arruina el rodaje.",
+    text: "Una plaza histórica en Praga obtiene un match visual de 97%, pero GEOLAND detecta que el ángulo solar en la semana de rodaje genera sombras duras exactamente durante la ventana prevista de cámara, además de alto flujo turístico entre las 10:30 y las 13:00. El sistema recomienda una plaza secundaria con 91% de similitud visual, pero con mejor orientación solar, menor tráfico peatonal, acceso lateral para camiones técnicos y permisos más rápidos. Visualmente era apenas inferior; productivamente era muy superior.",
+    variant: "titulo-cuerpo-bold",
+    backgroundMedia: "32.mp4",
+    overlayOpacity: 45,
+    align: "left",
+    maxWidth: "650px"
+  },
+  {
+    id: 32,
+    title: "Continuidad visual entre ciudades distintas.",
+    text: "El guion pide París, Viena y una ciudad alpina, pero GEOLAND detecta que varias escenas pueden resolverse en un único cluster operativo en Budapest y alrededores, manteniendo continuidad visual europea mediante calles, fachadas, interiores institucionales y rooftops compatibles. El sistema reduce cambios de ciudad, evita traslados largos, reutiliza iluminación, concentra permisos y mantiene una coherencia estética que el espectador no percibiría como sustitución. Eso convierte tres países en una operación mucho más simple.",
+    variant: "titulo-cuerpo-bold",
+    backgroundMedia: "33.mp4",
+    overlayOpacity: 45,
+    align: "right",
+    maxWidth: "650px"
+  },
+  {
+    id: 33,
+    title: "El rebate que no conviene.",
+    text: "Una producción quiere elegir una ciudad por su incentivo fiscal más alto, pero GEOLAND calcula que la distancia entre locaciones, la falta de proveedores técnicos cercanos y la complejidad de permisos anulan gran parte del beneficio. Recomienda otra ciudad con menor rebate, pero con estudios, rental houses, hoteles, crew local, hospitales y accesos logísticos dentro de un radio de 25 minutos.  El sistema demuestra que el \"mejor incentivo\" no siempre es la mejor decisión económica. Y en segundos.",
+    variant: "titulo-cuerpo-bold",
+    backgroundMedia: "34.mp4",
+    overlayOpacity: 45,
+    align: "left",
+    maxWidth: "650px"
+  },
+  {
+    id: 34,
+    title: "CADA OPERACIÓN ALIMENTA Y MEJORA EL SISTEMA",
+    text: "Combinando: Workflows operacionales / Operational Memory / Scoring propietario / Datasets contextuales / Orquestación vertical especializada / Lógica de producción / Inteligencia acumulativa.",
+    variant: "titulo-grande",
+    backgroundMedia: "35.png",
+    overlayOpacity: 45,
+    align: "right",
+    maxWidth: "650px"
+  },
+  {
+    id: 35,
+    title: "FUENTES DE DATOS DEL SISTEMA",
+    text: "Además, incorpora feedback operativo de producciones reales. Toda esta información se cruza con el Production Strategy Vector (PSV) para recomendar qué locación conviene, por qué, con qué riesgos, a qué coste y cómo hacerla filmable.",
+    variant: "diagrama-fuentes",
+    backgroundMedia: "diagram1.png",
+    overlayOpacity: 70
+  },
+  {
+    id: 36,
+    title: "MARKET",
+    text: "",
+    variant: "titulo-grande",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 37,
+    title: "MARKET SIZE",
+    text: "TAM | 300.000 COMPAÑÍAS | TOTAL ADDRESSABLE MARKET - Mercado total potencial global ;; SAM | 60.000 COMPAÑÍAS | SERVICEABLE AVAILABLE MARKET - Compañías que realizan producciones de forma recurrente, gestionan múltiples locaciones y enfrentan decisiones complejas de producción, logistica, permisos, costes y viabilidad ;; SOM | 2.000 - 4.000 COMPAÑÍAS (3% al 6.7% del SAM) | SERVICEABLE OBTAINABLE MARKET - Mercado capturable realista",
+    variant: "market",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 38,
+    title: "LAS SOLUCIONES ACTUALES RESUELVEN PARTES AISLADAS DEL PROCESO",
+    text: "ShotDeck | Solo referencias visuales ;; Set Scouter | Marketplace de locaciones ;; StudioBinder | Planificacion de produccion ;; Wrapbook | Payroll y operaciones ;; Reel-Scout | Solo bases de locaciones ;; Production HUB | Directorio industrial",
+    variant: "soluciones-grid",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 39,
+    title: "NINGUNA ORGANIZA LA DECISIÓN OPERACIONAL COMPLETA.",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 40,
+    title: "BUILT TO SCALE.<br/>ONE SYSTEM. MULTIPLE INDUSTRIES.",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 41,
+    title: "80% UNIVERSAL. 20% ADAPTABLE.",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "42.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 42,
+    title: "GEOLAND ES PARA PRODUCTION FILM.",
+    text: "Pero el motor central es común para otras verticales en un futuro: scoring,<br/>agentes, variables, contexto, análisis comparativo, visión computacional,<br/>verificación y explicación.",
+    variant: "titulo-grande",
+    backgroundMedia: "43.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 43,
+    title: "",
+    text: "Pudiendo más adelante, adaptar el contexto operacional.",
+    variant: "texto",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 44,
+    title: "REAL ESTATE AND FARMLAND",
+    text: "ROI / IRR / NOI, RIESGO Y CONTEXTO MACRO, REGULACIÓN Y FISCALIDAD, COMPARABLES GLOBALES, DEMANDA Y CRECIMIENTO, UBICACIÓN Y CONECTIVIDAD, COSTES OPERATIVOS, VISIÓN COMPUTACIONAL DEL ACTIVO, ESTRATEGIAS DE INVERSIÓN, TIMING DE MERCADO.",
+    variant: "diagrama-expansion",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 45,
+    title: "AVIATION & AERONAUTICS",
+    text: "RUTAS Y SLOTS, CLIMA Y CONDICIONES OPERATIVAS, COMBUSTIBLE Y COSTES, MANTENIMIENTO Y DISPONIBILIDAD, ASIGNACIÓN DE TRIPULACIÓN, RIESGO OPERATIVO, TIMING Y EFICIENCIA, COORDINACIÓN MULTI-SISTEMA, DISPONIBILIDAD DE ASSETS, OPTIMIZACIÓN OPERACIONAL.",
+    variant: "diagrama-expansion",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 46,
+    title: "LOGISTICS & SUPPLY CHAIN",
+    text: "RUTAS Y TIEMPOS OPERATIVOS, COSTES LOGÍSTICOS, CONGESTIÓN Y CAPACIDAD, CLIMA Y RIESGO OPERATIVO, RIESGO GEOPOLÍTICO, PUERTOS - HUBS Y NODOS CRÍTICOS, DISTRIBUCIÓN DE ASSETS, SUPPLY CHAIN FRAGMENTATION, OPTIMIZACIÓN MULTI-VARIABLE, EFICIENCIA OPERACIONAL.",
+    variant: "diagrama-expansion",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 47,
+    title: "RETAIL EXPANSION",
+    text: "DEMOGRAFÍA Y CONSUMO, TRÁFICO Y MOVILIDAD, COMPETENCIA Y SATURACIÓN, COSTES INMOBILIARIOS, POTENCIAL COMERCIAL, CRECIMIENTO URBANO, INGRESOS Y CONTEXTO ECONÓMICO, ACCESIBILIDAD Y CONECTIVIDAD, RIESGO OPERATIVO, EXPANSIÓN MULTI-CIUDAD.",
+    variant: "diagrama-expansion",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 48,
+    title: "EL PATRÓN ES SIEMPRE EL MISMO:",
+    text: "Datos fragmentados -> análisis complejo -> decisión clara.",
+    variant: "titulo-grande",
+    backgroundMedia: "49.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 49,
+    title: "TEAM",
+    text: "",
+    variant: "titulo-grande",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 50,
+    title: "",
+    text: `<div class='flex flex-col md:flex-row gap-16 justify-center items-start w-full max-w-[1200px] mx-auto mt-4'><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/pato_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>Patricio Lettieri</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Co-Founder - Data Infrastucture</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Especialista en data, análisis e IA aplicada, con más de 15 años de experiencia en marketing analítico y operaciones estratégicas para marcas como John Deere y Porsche. En GEOLAND conecta fuentes de datos, modelos inteligentes y ejecución operativa para transformar información compleja en decisiones claras y accionables.</p></div><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/pepe_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 scale-[1.15] origin-top [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>José Luis Curcio</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Co-Founder, Product vision & Strategy</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Publicista, estratega y director creativo con más de 18 años innovando para marcas globales como Coca-Cola, Ford y Samsung. Desde su experiencia en campañas y rodajes internacionales, conceptualizó GEOLAND y hoy lidera la visión, el diseño estratégico y la orquestación del equipo para convertir creatividad, tecnología y complejidad operativa en un sistema de inteligencia de decisión.</p></div></div>`,
+    backgroundMedia: "",
+    overlayOpacity: 0,
+    align: "center",
+    maxWidth: "1400px"
+  },
+  {
+    id: 51,
+    title: "",
+    text: `<div class='flex flex-col md:flex-row gap-16 justify-center items-start w-full max-w-[1200px] mx-auto mt-4'><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/juancarlos_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 scale-[1.25] origin-top [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>Juan Carlos Casalderrey</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Partner - Engineering / Mythology Labs</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Formado en Arquitectura y Diseño de Sistemas y Contratos Complejos en Tecnología. Desarrollador, consultor técnico y Co-Founder de Mythology Labs. En GEOLAND, aporta criterio técnico, liderazgo operativo y capacidad para ejecutar una plataforma robusta, escalable y orientada a negocio.</p></div><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/damian_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>Damián Scheck</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Partner - Engineering / Mythology Labs</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Analista de Sistemas de Computación, Licenciado en Sistemas, desarrollador de software, Co-Founder y CTO de Mythology Labs. En GEOLAND, lidera la arquitectura técnica, la calidad del código y el desarrollo de una plataforma robusta, escalable y segura, preparada para crecer con estándares profesionales de ingeniería.</p></div></div>`,
+    backgroundMedia: "",
+    overlayOpacity: 0,
+    align: "center",
+    maxWidth: "1400px"
+  },
+  {
+    id: 52,
+    title: "VALIDACIÓN INICIAL",
+    text: "",
+    variant: "validation-hud",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 53,
+    title: "ASESORES & EARLY USERS",
+    text: "Andy Hosman | Director | Luky Monday - US & LATAM / Go East Creative - Middle East & Asia / Hungry Man - Brasil / Oriental Films - U.S, LATAM, Spain. ;; Nico Bottero | Director & Producer | Los Modernos Films - Traviamento Films / Netflix - Coordinador de Arte. ;; Oliver Garland | Director & Founder | Olga Lee - Producción audiovisual destacada con presencia global, laureada a nivel internacional - U.S, LATAM, Europe. ;; Paulo Carneiro | Director & Execitive Producer | Máster por la ESTC de Lisboa y HEAD de Ginebra. En 2018 fundó Bam Bam Cinema y dirigió Bostofrio, premiada y exhibida en más de 40 festivales. Sus trabajos posteriores incluyen Périphérique Nord y A savana e a Montanha (2024), también premiada. ;; Fede Cetta | Executive Producer & Founder | El Cielo Cine - Reconocida por su proyección internacional, sus producciones han participado en festivales de Cannes, Visions du Réel, BAFICI y Ventana Sur. La compañía desarrolla largometrajes, documentales y producciones internacionales premiadas. ;; Natalia Azzato | Producer | El Camino Films - Productora audiovisual con operaciones en Uruguay, Argentina, Brasil y Chile, especializada en brindar soporte de producción en Sudamérica para proyectos internacionales, especialmente de Norteamérica y Europa.",
+    variant: "advisors",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 54,
+    title: "ALCANCE OPERATIVO & ROADMAP",
+    text: "",
+    variant: "roadmap",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 55,
+    title: "THE FUTURE BELONGS TO BETTER DECISIONS",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+  {
+    id: 56,
+    title: "GEOLAND",
+    text: "Decision System for Film Production",
+    variant: "portada81",
+    backgroundMedia: "portada.mp4",
+    overlayOpacity: 45
+  },
+  {
+    id: 57,
+    title: "LET'S TALK",
+    text: "",
+    variant: "titulo-grande",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  }
 ];

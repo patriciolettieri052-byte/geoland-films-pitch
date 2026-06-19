@@ -160,7 +160,7 @@ function App() {
           >
             <div className="absolute inset-0 z-0 overflow-hidden">
               <video 
-                src="/assets/portada2.mp4" 
+                src="assets/portada.mp4" 
                 autoPlay 
                 muted
                 loop 

@@ -3,6 +3,11 @@ import { motion } from 'framer-motion';
 import Logo from './Logo';
 import HubDiagram from './HubDiagram';
 import NeuralMap from './NeuralMap';
+import DiagramaFuentes from './DiagramaFuentes';
+import DiagramaExpansion from './DiagramaExpansion';
+import RoadmapCinematic from './RoadmapCinematic';
+import AdvisorsHud from './AdvisorsHud';
+import ValidationHud from './ValidationHud';
 
 interface ChapterProps {
   id: number;
@@ -15,7 +20,7 @@ interface ChapterProps {
   isItalic?: boolean;
   overline?: string;
   titleSize?: string;
-  variant?: "subtitulo" | "titulo" | "portada" | "portada81" | "portadafinal" | "texto" | "barras" | "barras-pro" | "apertura" | "apertura2" | "hub" | "backtest-stats" | "backtest-cities" | "numeric" | "business-units" | "reviews" | "neural-map";
+  variant?: "subtitulo" | "titulo" | "portada" | "portada81" | "portadafinal" | "texto" | "barras" | "barras-pro" | "apertura" | "apertura2" | "hub" | "backtest-stats" | "backtest-cities" | "numeric" | "business-units" | "reviews" | "neural-map" | "titulo-grande" | "titulo-chico" | "advisors" | "roadmap" | "soluciones-grid" | "diagrama-fuentes" | "diagrama-expansion" | "market" | "texto-arriba" | "titulo-cuerpo-bold" | "validation-hud";
   align?: "left" | "center" | "right";
   maxWidth?: string;
   ctaUrl?: string;
@@ -24,6 +29,19 @@ interface ChapterProps {
 }
 
 
+
+const getBigTitleStyle = (text: string) => {
+  const length = text.replace(/<[^>]*>/g, '').length;
+  let fontSize = 470;
+  if (length > 8) {
+    fontSize = Math.min(470, 1920 / (length * 0.35));
+  }
+  fontSize = fontSize * 0.85; // 15% reduction
+  fontSize = Math.max(50, fontSize);
+  return {
+    fontSize: `${fontSize}px`,
+  };
+};
 
 const Chapter: React.FC<ChapterProps> = ({ id, title, overline, text, backgroundMedia, isTitleBlue, overlayOpacity, isBold, isItalic, titleSize, variant, align = "center", maxWidth, ctaUrl, ctaText, footer }) => {
   const isVideo = backgroundMedia?.toLowerCase().endsWith('.mp4');
@@ -140,7 +158,7 @@ const Chapter: React.FC<ChapterProps> = ({ id, title, overline, text, background
         {backgroundMedia && (
           isVideo ? (
             <video 
-              src={backgroundMedia.startsWith('backtesting') || backgroundMedia.startsWith('escala') ? `/assets/${backgroundMedia}` : `/assets/${backgroundMedia}`}
+              src={backgroundMedia.startsWith('backtesting') || backgroundMedia.startsWith('escala') ? `assets/${backgroundMedia}` : `assets/${backgroundMedia}`}
               autoPlay 
               muted
               loop 
@@ -149,7 +167,7 @@ const Chapter: React.FC<ChapterProps> = ({ id, title, overline, text, background
             />
           ) : (
             <img 
-              src={`/assets/${backgroundMedia}`} 
+              src={`assets/${backgroundMedia}`} 
               className="w-full h-full object-cover"
               alt="background"
             />
@@ -167,8 +185,8 @@ const Chapter: React.FC<ChapterProps> = ({ id, title, overline, text, background
         variants={containerVariants}
         initial="initial"
         animate="animate"
-        className={variant === 'neural-map' ? "absolute inset-0 z-30" : `relative z-20 w-full px-8 flex flex-col ${align === 'left' ? 'items-start text-left' : align === 'right' ? 'items-end text-right' : 'items-center text-center'}`}
-        style={variant === 'neural-map' ? { width: '100%', height: '100%' } : { 
+        className={variant === 'neural-map' || variant === 'roadmap' || variant === 'advisors' || variant === 'validation-hud' ? "absolute inset-0 z-30" : `relative z-20 w-full px-8 flex flex-col ${align === 'left' ? 'items-start text-left' : align === 'right' ? 'items-end text-right' : 'items-center text-center'}`}
+        style={variant === 'neural-map' || variant === 'roadmap' || variant === 'advisors' || variant === 'validation-hud' ? { width: '100%', height: '100%' } : { 
           maxWidth: maxWidth || (variant?.startsWith('backtest') || variant === 'business-units' || variant === 'reviews' ? '1400px' : '1045px'),
           paddingLeft: align === 'left' ? '50px' : undefined,
           paddingRight: align === 'right' ? '50px' : undefined
@@ -438,28 +456,417 @@ const Chapter: React.FC<ChapterProps> = ({ id, title, overline, text, background
             )}
           </div>
         ) : variant === 'numeric' ? (
-          <div className="w-full max-w-[1200px] mx-auto py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32">
+          <div className="w-full max-w-[1400px] mx-auto py-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 justify-center items-center">
               {parseNumeric(text).map((item, idx) => (
                 <motion.div 
                   key={idx}
                   variants={itemVariants}
                   className="flex flex-col items-center text-center"
                 >
-                  <h2 className="text-8xl md:text-[10rem] font-cormorant font-bold text-white tracking-tighter leading-none mb-6">
+                  <h2 
+                    className="titulo-grande-cinematic mb-6"
+                    style={{ fontSize: '240px', lineHeight: '0.8' }}
+                  >
                     {item.value}
                   </h2>
                   <div className="flex flex-col items-center text-center space-y-4">
-                    <span className="text-geoland-blue tracking-[0.5em] text-lg md:text-2xl uppercase font-bold">
-                      {item.label}
-                    </span>
-                    <p className="text-lg md:text-xl font-light text-white/50 tracking-[0.1em] uppercase leading-relaxed max-w-md">
+                    {item.label && (
+                      <span className="titulo-chico-cinematic !text-3xl tracking-[0.2em]">
+                        {item.label}
+                      </span>
+                    )}
+                    <p className="texto-cuerpo-cinematic max-w-md">
                       {item.subtext}
                     </p>
                   </div>
                 </motion.div>
               ))}
             </div>
+          </div>
+        ) : variant === 'market' ? (
+          <div className="w-full max-w-[1200px] mx-auto py-8 px-4 flex flex-col justify-center min-h-[75vh]">
+            {title && (
+              <motion.div 
+                variants={itemVariants} 
+                className="titulo-chico-cinematic text-center mb-10 !text-5xl tracking-widest"
+              >
+                {title}
+              </motion.div>
+            )}
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 justify-center items-stretch mt-4 pb-8">
+              {(() => {
+                // Parser for market data
+                const items = text.split(';;').map(block => {
+                  const parts = block.split('|').map(s => s.trim());
+                  
+                  const val = parts[1] || "";
+                  const match = val.match(/^([\d.,\s-]+?)\s+([A-Z].*)$/);
+                  const numberPart = match ? match[1].trim() : val;
+                  const unitPart = match ? match[2].trim() : "";
+
+                  const sub = parts[2] || "";
+                  const subParts = sub.split(' - ');
+                  const subTitle = subParts[0] || "";
+                  const subDesc = subParts[1] || "";
+
+                  return { 
+                    label: parts[0], 
+                    numberPart, 
+                    unitPart, 
+                    subTitle, 
+                    subDesc 
+                  };
+                });
+
+                const getNumberFontSize = (val: string) => {
+                  if (val.length > 10) return '52px';
+                  if (val.length > 8) return '62px';
+                  if (val.length > 6) return '72px';
+                  return '84px';
+                };
+
+                return items.map((item, idx) => {
+                  const isSOM = item.label.toLowerCase() === 'som';
+                  
+                  // Levels & Headers for tech card look
+                  const levelText = item.label.toLowerCase() === 'tam' 
+                    ? "LEVEL 01 // GLOBAL ADDRESSABLE" 
+                    : item.label.toLowerCase() === 'sam'
+                      ? "LEVEL 02 // SERVICEABLE AUDIENCE"
+                      : "LEVEL 03 // IMMEDIATE TARGET";
+
+                  // Layout offset for waterfall cascading card effect
+                  const translateClass = idx === 0 
+                    ? "md:translate-y-0" 
+                    : idx === 1 
+                      ? "md:translate-y-4" 
+                      : "md:translate-y-8";
+
+                  return (
+                    <motion.div 
+                      key={idx}
+                      variants={itemVariants}
+                      className={`relative bg-black/45 backdrop-blur-xl border rounded-lg p-7 flex flex-col justify-between transition-all duration-500 overflow-hidden ${translateClass} ${
+                        isSOM 
+                          ? 'border-geoland-blue/50 shadow-[0_0_35px_rgba(56,189,248,0.12)] bg-black/60' 
+                          : 'border-white/10 hover:border-white/20'
+                      }`}
+                    >
+                      {/* Tech Card Corner Notches for SOM */}
+                      {isSOM && (
+                        <>
+                          <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t-2 border-r-2 border-geoland-blue" />
+                          <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-geoland-blue" />
+                        </>
+                      )}
+
+                      <div>
+                        {/* Level Header Info */}
+                        <div className="mb-5 border-b border-white/5 pb-3 text-center">
+                          <span className="text-[8px] font-mono tracking-widest text-zinc-500 uppercase">
+                            {levelText}
+                          </span>
+                        </div>
+
+                        {/* Market Label */}
+                        <span className="text-zinc-500 text-[9px] tracking-[0.25em] font-mono block uppercase text-center mb-1">
+                          MARKET SEGMENT
+                        </span>
+                        <span 
+                          className="text-white font-extrabold tracking-widest block text-center uppercase"
+                          style={{
+                            fontFamily: "'League Gothic', sans-serif",
+                            fontSize: '32px'
+                          }}
+                        >
+                          {item.label}
+                        </span>
+                        
+                        {/* Huge Number Value */}
+                        <div className="my-6 text-center select-none flex flex-col items-center justify-center min-h-[90px]">
+                          {isSOM ? (
+                            <div 
+                              className="tracking-tighter text-geoland-blue whitespace-nowrap"
+                              style={{ 
+                                fontFamily: "'League Gothic', sans-serif",
+                                textShadow: '0 0 25px rgba(56,189,248,0.35)',
+                                fontSize: getNumberFontSize(item.numberPart),
+                                lineHeight: '1',
+                                letterSpacing: '0.04em'
+                              }}
+                            >
+                              {item.numberPart}
+                            </div>
+                          ) : (
+                            <div 
+                              className="tracking-tighter whitespace-nowrap"
+                              style={{ 
+                                fontFamily: "'League Gothic', sans-serif",
+                                WebkitTextStroke: '1.2px rgba(255, 255, 255, 0.45)',
+                                color: 'transparent',
+                                fontSize: getNumberFontSize(item.numberPart),
+                                lineHeight: '1',
+                                letterSpacing: '0.04em'
+                              }}
+                            >
+                              {item.numberPart}
+                            </div>
+                          )}
+                          <div className="text-[9px] font-mono tracking-[0.18em] text-zinc-400 uppercase mt-3">
+                            {item.unitPart}
+                          </div>
+                        </div>
+
+                        {/* Thin division line */}
+                        <div className="w-full h-[1px] bg-white/5 my-4" />
+                      </div>
+
+                      {/* Subtext description details */}
+                      <div className="text-center mt-2 flex flex-col items-center">
+                        <h5 
+                          className="font-bold tracking-[0.12em] text-zinc-300 uppercase mb-1.5 text-center"
+                          style={{
+                            fontFamily: "'League Gothic', sans-serif",
+                            fontSize: '15px',
+                            letterSpacing: '0.08em'
+                          }}
+                        >
+                          {item.subTitle}
+                        </h5>
+                        <p 
+                          className="text-[10.5px] text-white/45 leading-relaxed font-light text-center max-w-[260px]"
+                          style={{
+                            fontFamily: "'Arimo', sans-serif"
+                          }}
+                        >
+                          {item.subDesc}
+                        </p>
+                      </div>
+                    </motion.div>
+                  );
+                });
+              })()}
+            </div>
+          </div>
+        ) : variant === 'soluciones-grid' ? (
+          <div className="w-full max-w-[1200px] mx-auto flex flex-col justify-between min-h-[78vh] py-6 px-4">
+            {title && (
+              <div className="w-full flex justify-center mb-4">
+                <motion.h2 
+                  variants={itemVariants}
+                  className="text-center max-w-[883px] mx-auto uppercase text-zinc-300"
+                  style={{ 
+                    fontFamily: "'League Gothic', sans-serif",
+                    fontSize: '28px', 
+                    lineHeight: '1.2', 
+                    letterSpacing: '0.12em' 
+                  }}
+                >
+                  {title}
+                </motion.h2>
+              </div>
+            )}
+            
+            <div className="flex-grow flex items-center justify-center">
+              <div className="w-full max-w-[614px] mx-auto overflow-hidden border border-white/10 bg-black/40 backdrop-blur-xl rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.02)]">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-white/10 bg-white/5 font-mono text-[10.5px] tracking-[0.24em] text-zinc-400 uppercase select-none">
+                      <th className="py-3.5 px-8 font-bold w-1/3">SOLUCIÓN ACTUAL</th>
+                      <th className="py-3.5 px-8 font-bold w-2/3 text-center">ENFOQUE LIMITADO / ALCANCE AISLADO</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {(() => {
+                      const rows = text.split(';;').map(block => {
+                        const [name, desc] = block.split('|').map(s => s.trim());
+                        return { name, desc };
+                      });
+                      
+                      return rows.map((row, idx) => (
+                        <motion.tr 
+                          key={idx}
+                          variants={itemVariants}
+                          className="border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors duration-300"
+                        >
+                          <td className="py-3.5 px-8">
+                            <div className="flex items-center gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full bg-geoland-blue/80 shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+                              <span 
+                                className="tracking-wider text-white uppercase"
+                                style={{
+                                  fontFamily: "'League Gothic', sans-serif",
+                                  fontSize: '20px',
+                                  letterSpacing: '0.06em'
+                                }}
+                              >
+                                {row.name}
+                              </span>
+                            </div>
+                          </td>
+                          <td className="py-3.5 px-8">
+                            <p 
+                              className="text-[13px] text-white/50 leading-relaxed font-light text-center"
+                              style={{
+                                fontFamily: "'Arimo', sans-serif"
+                              }}
+                            >
+                              {row.desc}
+                            </p>
+                          </td>
+                        </motion.tr>
+                      ));
+                    })()}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        ) : variant === 'diagrama-expansion' ? (
+          <div className="w-full max-w-[1400px] mx-auto py-8 flex flex-col justify-center h-[80vh]">
+            <div className="flex-grow w-full min-h-[450px] relative">
+              <DiagramaExpansion title={title || ""} text={text || ""} />
+            </div>
+          </div>
+        ) : variant === 'diagrama-fuentes' ? (
+          <div className="w-full max-w-[1400px] mx-auto py-8 flex flex-col justify-between h-[80vh]">
+            {title && (
+              <motion.h2 
+                variants={itemVariants}
+                className="titulo-chico-cinematic text-center mb-4 !text-4xl"
+              >
+                {title}
+              </motion.h2>
+            )}
+            
+            <div className="flex-grow w-full min-h-[450px] relative">
+              <DiagramaFuentes />
+            </div>
+            
+            {text && (
+              <motion.div variants={itemVariants} className="mt-4 text-center max-w-4xl mx-auto z-30">
+                <p className="texto-fuentes-descripcion leading-relaxed">
+                  {text}
+                </p>
+              </motion.div>
+            )}
+          </div>
+        ) : variant === 'validation-hud' ? (
+          <ValidationHud />
+        ) : variant === 'advisors' ? (
+          <AdvisorsHud title={title} text={text} />
+        ) : variant === 'roadmap' ? (
+          <RoadmapCinematic title={title} />
+        ) : variant === 'titulo-grande' ? (
+          text ? (
+            <div className={`flex flex-col w-fit ${align === 'left' ? 'items-start text-left mr-auto' : align === 'right' ? 'items-end text-right ml-auto' : 'items-start text-left mx-auto'}`} style={{ maxWidth: maxWidth || '1000px' }}>
+              {title && (
+                <motion.h2 
+                  variants={itemVariants}
+                  className={`titulo-chico-cinematic mb-6 ${align === 'right' ? 'text-right' : 'text-left'}`}
+                >
+                  <span dangerouslySetInnerHTML={{ __html: title }} />
+                </motion.h2>
+              )}
+              <motion.div 
+                variants={itemVariants}
+                className={`texto-cuerpo-cinematic ${align === 'right' ? 'text-right' : 'text-left'}`}
+              >
+                <div dangerouslySetInnerHTML={{ __html: text }} />
+              </motion.div>
+            </div>
+          ) : (
+            <>
+              {title && (
+                <motion.h2 
+                  variants={itemVariants}
+                  className="titulo-grande-cinematic mb-8"
+                  style={getBigTitleStyle(title)}
+                >
+                  <span dangerouslySetInnerHTML={{ __html: title }} />
+                </motion.h2>
+              )}
+            </>
+          )
+        ) : variant === 'titulo-chico' ? (
+          <>
+            {title && (
+              text ? (
+                <motion.h2 
+                  variants={itemVariants}
+                  className={`titulo-chico-cinematic mb-6 w-full ${align === 'right' ? 'text-right' : 'text-left'}`}
+                >
+                  <span dangerouslySetInnerHTML={{ __html: title }} />
+                </motion.h2>
+              ) : (
+                <motion.h2 
+                  variants={itemVariants}
+                  className={`titulo-chico-cinematic mb-6 w-full ${align === 'right' ? 'text-right' : align === 'left' ? 'text-left' : 'text-center'}`}
+                >
+                  <span dangerouslySetInnerHTML={{ __html: title }} />
+                </motion.h2>
+              )
+            )}
+            {text && (
+              <motion.div 
+                variants={itemVariants}
+                className={`texto-cuerpo-cinematic w-full ${align === 'right' ? 'text-right' : 'text-left'}`}
+                style={{ maxWidth: maxWidth || '1000px' }}
+              >
+                <div dangerouslySetInnerHTML={{ __html: text }} />
+              </motion.div>
+            )}
+          </>
+        ) : variant === 'texto' ? (
+          <>
+            {text && (
+              <motion.div 
+                variants={itemVariants}
+                className="texto-cuerpo-cinematic w-full"
+                style={{ maxWidth: maxWidth || '1000px' }}
+              >
+                <div dangerouslySetInnerHTML={{ __html: text }} />
+              </motion.div>
+            )}
+          </>
+        ) : variant === 'texto-arriba' ? (
+          <div className={`flex flex-col w-fit ${align === 'left' ? 'items-start text-left mr-auto' : align === 'right' ? 'items-end text-right ml-auto' : 'items-start text-left mx-auto'}`} style={{ maxWidth: maxWidth || '1045px' }}>
+            {text && (
+              <motion.div 
+                variants={itemVariants}
+                className="texto-cuerpo-cinematic mb-3 text-left"
+              >
+                <div dangerouslySetInnerHTML={{ __html: text }} />
+              </motion.div>
+            )}
+            {title && (
+              <motion.h2 
+                variants={itemVariants}
+                className="titulo-chico-cinematic text-left"
+              >
+                <span dangerouslySetInnerHTML={{ __html: title }} />
+              </motion.h2>
+            )}
+          </div>
+        ) : variant === 'titulo-cuerpo-bold' ? (
+          <div className={`flex flex-col w-fit ${align === 'left' ? 'items-start text-left mr-auto' : align === 'right' ? 'items-end text-right ml-auto' : 'items-start text-left mx-auto'}`} style={{ maxWidth: maxWidth || '1000px' }}>
+            {title && (
+              <motion.h2 
+                variants={itemVariants}
+                className={`titulo-cuerpo-bold mb-2 ${align === 'right' ? 'text-right' : 'text-left'}`}
+                dangerouslySetInnerHTML={{ __html: title }}
+              />
+            )}
+            {text && (
+              <motion.div 
+                variants={itemVariants}
+                className={`texto-cuerpo-cinematic ${align === 'right' ? 'text-right' : 'text-left'}`}
+              >
+                <div dangerouslySetInnerHTML={{ __html: text }} />
+              </motion.div>
+            )}
           </div>
         ) : variant === 'business-units' ? (
           <div className="w-full py-8">
@@ -503,7 +910,7 @@ const Chapter: React.FC<ChapterProps> = ({ id, title, overline, text, background
         ) : variant === 'portada' ? (
           <Logo intro />
         ) : variant === 'portada81' ? (
-          <Logo intro subtitle={text} subtitleClassName="!mt-[17px] !text-[9px] md:!text-[11px] !tracking-[0.2em]" />
+          <Logo intro subtitle={text} subtitleClassName="!mt-[17px] !text-[9.5px] md:!text-[11.6px] !tracking-[0.2em]" />
         ) : variant === 'portadafinal' ? (
           <Logo intro subtitle="JOIN US" />
         ) : variant === 'apertura' ? (
@@ -569,7 +976,8 @@ const Chapter: React.FC<ChapterProps> = ({ id, title, overline, text, background
             {title && (
               <motion.h2 
                 variants={itemVariants}
-                className={`${variant === 'subtitulo' ? 'text-xl md:text-3xl italic' : (titleSize || 'text-4xl md:text-6xl')} mb-8 tracking-[0.2em] uppercase ${isBold || variant === 'titulo' ? 'font-bold' : 'font-extralight'} ${isItalic && variant !== 'subtitulo' ? 'italic' : ''} ${isTitleBlue ? 'text-blue-400' : 'text-white'} ${align === 'right' ? 'text-right' : align === 'left' ? 'text-left' : 'text-center'}`}
+                className={`${variant === 'subtitulo' ? 'text-xl md:text-3xl' : (titleSize || 'text-4xl md:text-6xl')} mb-8 tracking-[0.2em] uppercase ${isBold || variant === 'titulo' ? 'font-bold' : 'font-extralight'} ${isItalic && variant !== 'subtitulo' ? 'italic' : ''} ${isTitleBlue ? 'text-blue-400' : 'text-white'} ${align === 'right' ? 'text-right' : align === 'left' ? 'text-left' : 'text-center'}`}
+                style={variant === 'subtitulo' ? { fontFamily: "'League Gothic', sans-serif" } : undefined}
               >
                 <span dangerouslySetInnerHTML={{ __html: title }} />
               </motion.h2>

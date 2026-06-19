@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Agency / Development Scrap Files
+agents/
+brain/
+tickets/
+checkpoint_today.md
+main_orchestrator.py
+scratch/
+materiales/
+fotos y videos/
+*.pdf
+*.zip
+*.log
+
+# Editor configurations
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

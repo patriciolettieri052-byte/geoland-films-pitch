@@ -36,6 +36,10 @@
     color: white !important;
   }
 
+  strong, b {
+    font-weight: 700 !important;
+  }
+
   /* Overlay for background media */
   .media-overlay {
     @apply absolute inset-0 bg-black/40 z-10; /* 40% opacity default */
@@ -83,5 +87,47 @@
   }
   .estilo-subtitulo {
     @apply text-xl md:text-3xl italic tracking-[0.2em] uppercase font-extralight;
+  }
+  .titulo-grande-cinematic {
+    font-family: 'League Gothic', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    -webkit-text-stroke: 1.5px #ffffff;
+    text-stroke: 1.5px #ffffff;
+    line-height: 0.8;
+    font-weight: normal;
+  }
+  .titulo-chico-cinematic {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 60px !important;
+    text-transform: uppercase;
+    color: #d3d0cb !important;
+    line-height: 0.84;
+    font-weight: normal;
+  }
+  .texto-cuerpo-cinematic {
+    font-family: 'Arimo', sans-serif;
+    font-size: 20px !important;
+    color: #d3d0cb !important;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  .titulo-cuerpo-bold,
+  .titulo-cuerpo-bold span {
+    font-family: 'Arimo', sans-serif;
+    font-size: 20px !important;
+    color: #d3d0cb !important;
+    line-height: 1.4;
+    font-weight: 700 !important;
+    text-transform: none !important;
+  }
+  .texto-fuentes-descripcion {
+    font-family: 'Arimo', sans-serif;
+    font-size: 9pt !important;
+    color: #d3d0cb !important;
+    font-weight: 400 !important;
+    text-transform: none !important;
   }
 }
