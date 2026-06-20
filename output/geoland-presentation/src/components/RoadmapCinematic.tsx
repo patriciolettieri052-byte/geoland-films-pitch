@@ -14,13 +14,13 @@ const F = {
 const PHASE1 = {
   tag: 'HOY · FASE 01',
   title: 'VALIDACIÓN PRIVADA',
-  sub: 'MES 5',
+  sub: 'MES 6',
   stat: '4',
   statLabel: 'CIUDADES EN VALIDACIÓN',
   statSub: 'Beta testers probando el sistema en mercados seleccionados.',
   items: [
     { title: 'MOTOR DE DECISIÓN', sub: 'Comparación de locaciones por variables reales.' },
-    { title: 'EARLY USERS',       sub: 'Feedback operativo de producción real.' },
+    { title: 'EARLY USERS',       sub: 'Feedback operativo de producción.' },
   ],
 };
 const PHASE2 = {
@@ -203,7 +203,7 @@ const RoadmapCinematic: React.FC<{ title?: string }> = ({ title }) => (
       maxWidth: '650px',
       lineHeight: 1.5
     }}>
-      Mes 5 · validación privada · primeros mercados testeados · apertura comercial en preparación
+      Mes 6 · validación privada · primeros mercados testeados · apertura comercial en preparación
     </p>
 
     {/* Grid container */}

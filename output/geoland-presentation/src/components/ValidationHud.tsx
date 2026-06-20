@@ -156,7 +156,7 @@ const ValidationHud: React.FC = () => {
             title="PRODUCTORAS ACTIVAS"
             statNumber="6"
             statLabel="PRODUCTORAS DE CINE"
-            subtext="Actualmente testeando y nutriendo el sistema de manera privada en rodajes y preproducción real."
+            subtext="Actualmente testeando y nutriendo el sistema de manera privada."
             delay={0.2}
           />
 

@@ -366,7 +366,7 @@ export const slides: SlideData[] = [
     title: "80% UNIVERSAL. 20% ADAPTABLE.",
     text: "",
     variant: "titulo-chico",
-    backgroundMedia: "42.mp4",
+    backgroundMedia: "Para la 41.mp4",
     overlayOpacity: 45
   },
   {
@@ -464,8 +464,8 @@ export const slides: SlideData[] = [
     title: "ASESORES & EARLY USERS",
     text: "Andy Hosman | Director | Luky Monday - US & LATAM / Go East Creative - Middle East & Asia / Hungry Man - Brasil / Oriental Films - U.S, LATAM, Spain. ;; Nico Bottero | Director & Producer | Los Modernos Films - Traviamento Films / Netflix - Coordinador de Arte. ;; Oliver Garland | Director & Founder | Olga Lee - Producción audiovisual destacada con presencia global, laureada a nivel internacional - U.S, LATAM, Europe. ;; Paulo Carneiro | Director & Execitive Producer | Máster por la ESTC de Lisboa y HEAD de Ginebra. En 2018 fundó Bam Bam Cinema y dirigió Bostofrio, premiada y exhibida en más de 40 festivales. Sus trabajos posteriores incluyen Périphérique Nord y A savana e a Montanha (2024), también premiada. ;; Fede Cetta | Executive Producer & Founder | El Cielo Cine - Reconocida por su proyección internacional, sus producciones han participado en festivales de Cannes, Visions du Réel, BAFICI y Ventana Sur. La compañía desarrolla largometrajes, documentales y producciones internacionales premiadas. ;; Natalia Azzato | Producer | El Camino Films - Productora audiovisual con operaciones en Uruguay, Argentina, Brasil y Chile, especializada en brindar soporte de producción en Sudamérica para proyectos internacionales, especialmente de Norteamérica y Europa.",
     variant: "advisors",
-    backgroundMedia: "",
-    overlayOpacity: 0
+    backgroundMedia: "53.png",
+    overlayOpacity: 45
   },
   {
     id: 54,

@@ -63,6 +63,7 @@ const AdvisorCard: React.FC<{
         color: F.dimRed,
         margin: '0 0 12px 0',
         fontWeight: 400,
+        textAlign: 'center',
       }}>
         {role}
       </p>
@@ -103,7 +104,7 @@ const AdvisorsHud: React.FC<AdvisorsHudProps> = ({ title, text }) => {
       width: '100%',
       height: '100%',
       overflow: 'hidden',
-      background: '#000000',
+      background: 'transparent',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
