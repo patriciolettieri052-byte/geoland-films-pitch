@@ -26,47 +26,7 @@ export const slides: SlideData[] = [
     backgroundMedia: "",
     overlayOpacity: 0
   },
-  {
-    id: 2,
-    title: "EN EL MUNDO SE GENERAN 402M DE TERABYTES DE INFORMACIÓN POR DÍA.",
-    text: "Pero las decisiones más importantes todavía dependen de sistemas fragmentados.<br/>— Exploding Topics.",
-    variant: "titulo-grande",
-    backgroundMedia: "3.mp4",
-    overlayOpacity: 45,
-    maxWidth: "1000px"
-  },
-  {
-    id: 3,
-    title: "",
-    text: "30% | IDC | Tiempo perdido por profesionales buscando y organizando información ;; 40% | Techdata | De empresas reporta pérdidas por datos fragmentados.",
-    variant: "numeric",
-    backgroundMedia: "4.mp4",
-    overlayOpacity: 45
-  },
-  {
-    id: 4,
-    title: "3% DEL BENEFICIO ANUAL PERDIDO",
-    text: "Por malas decisiones y datos fragmentados.<br/>— Gartner.",
-    variant: "titulo-grande",
-    backgroundMedia: "5.mp4",
-    overlayOpacity: 45
-  },
-  {
-    id: 5,
-    title: "USD 95B DE PÉRDIDAS EN LOGÍSTICA",
-    text: "Por año sólo en Estados Unidos por ineficiencias.<br/>— McKinsey.",
-    variant: "titulo-grande",
-    backgroundMedia: "6.mp4",
-    overlayOpacity: 45
-  },
-  {
-    id: 6,
-    title: "USD 11B DE PÉRDIDAS EN LA INDUSTRIA AÉREA",
-    text: "En 2025 por ineficiencias operativas y fragmentación en supply chain.<br/>— IATA + Oliver Wyman.",
-    variant: "titulo-grande",
-    backgroundMedia: "7.mp4",
-    overlayOpacity: 45
-  },
+
   {
     id: 7,
     title: "EN CINE, UN SOLO DÍA DE RETRASO PUEDE SIGNIFICAR CIENTOS DE MILES DE EUROS PERDIDOS.",
@@ -139,38 +99,7 @@ export const slides: SlideData[] = [
     backgroundMedia: "",
     overlayOpacity: 0
   },
-  {
-    id: 16,
-    title: "DURANTE AÑOS, LAS EMPRESAS CONSTRUYERON SISTEMAS PARA ALMACENAR DATOS.",
-    text: "",
-    variant: "titulo-chico",
-    backgroundMedia: "17.mp4",
-    overlayOpacity: 45
-  },
-  {
-    id: 17,
-    title: "DESPUÉS, PARA PROCESARLOS.",
-    text: "",
-    variant: "titulo-chico",
-    backgroundMedia: "18.mp4",
-    overlayOpacity: 45
-  },
-  {
-    id: 18,
-    title: "AHORA, VIENE LA CAPA QUE FALTA.",
-    text: "",
-    variant: "titulo-chico",
-    backgroundMedia: "",
-    overlayOpacity: 0
-  },
-  {
-    id: 19,
-    title: "LA DE DECISIÓN.",
-    text: "Los datos por sí solos no hacen al mundo más inteligente.<br/>Las decisiones que tomamos con ellos sí.",
-    variant: "titulo-grande",
-    backgroundMedia: "20.mp4",
-    overlayOpacity: 45
-  },
+
   {
     id: 20,
     title: "PRESENTAMOS:",
@@ -322,6 +251,15 @@ export const slides: SlideData[] = [
     overlayOpacity: 70
   },
   {
+    id: 55,
+    title: "THE FUTURE BELONGS TO BETTER DECISIONS",
+    text: "",
+    variant: "titulo-chico",
+    backgroundMedia: "",
+    overlayOpacity: 0
+  },
+
+  {
     id: 36,
     title: "MARKET",
     text: "",
@@ -368,6 +306,14 @@ export const slides: SlideData[] = [
     variant: "titulo-chico",
     backgroundMedia: "Para la 41.mp4",
     overlayOpacity: 45
+  },
+  {
+    id: 41.5,
+    title: "Del primer cheque al Serie B",
+    text: "",
+    variant: "projections",
+    backgroundMedia: "",
+    overlayOpacity: 0
   },
   {
     id: 42,
@@ -436,7 +382,7 @@ export const slides: SlideData[] = [
   {
     id: 50,
     title: "",
-    text: `<div class='flex flex-col md:flex-row gap-16 justify-center items-start w-full max-w-[1200px] mx-auto mt-4'><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/pato_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>Patricio Lettieri</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Co-Founder - Data Infrastucture</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Especialista en data, análisis e IA aplicada, con más de 15 años de experiencia en marketing analítico y operaciones estratégicas para marcas como John Deere y Porsche. En GEOLAND conecta fuentes de datos, modelos inteligentes y ejecución operativa para transformar información compleja en decisiones claras y accionables.</p></div><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/pepe_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 scale-[1.15] origin-top [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>José Luis Curcio</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Co-Founder, Product vision & Strategy</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Publicista, estratega y director creativo con más de 18 años innovando para marcas globales como Coca-Cola, Ford y Samsung. Desde su experiencia en campañas y rodajes internacionales, conceptualizó GEOLAND y hoy lidera la visión, el diseño estratégico y la orquestación del equipo para convertir creatividad, tecnología y complejidad operativa en un sistema de inteligencia de decisión.</p></div></div>`,
+    text: `<div class='flex flex-col md:flex-row gap-16 justify-center items-start w-full max-w-[1200px] mx-auto mt-4'><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/pato_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>Patricio Lettieri</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Co-Founder - Data Infrastucture</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Especialista en data, analítica e IA aplicada, con más de 15 años de experiencia en marketing analytics y operaciones estratégicas para marcas como John Deere y Porsche. En GEOLAND lidera la arquitectura de datos y la transformación de información compleja en decisiones accionables.</p></div><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/pepe_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 scale-[1.15] origin-top [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>José Luis Curcio</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Co-Founder, Product vision & Strategy</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Publicista, estratega y director creativo con más de 18 años de experiencia para marcas globales como Coca-Cola, Ford y Samsung, y trayectoria directa en campañas, producciones y rodajes internacionales. Esa experiencia dio origen a GEOLAND; hoy lidera la visión de producto y estrategia.</p></div></div>`,
     backgroundMedia: "",
     overlayOpacity: 0,
     align: "center",
@@ -445,7 +391,7 @@ export const slides: SlideData[] = [
   {
     id: 51,
     title: "",
-    text: `<div class='flex flex-col md:flex-row gap-16 justify-center items-start w-full max-w-[1200px] mx-auto mt-4'><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/juancarlos_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 scale-[1.25] origin-top [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>Juan Carlos Casalderrey</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Partner - Engineering / Mythology Labs</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Formado en Arquitectura y Diseño de Sistemas y Contratos Complejos en Tecnología. Desarrollador, consultor técnico y Co-Founder de Mythology Labs. En GEOLAND, aporta criterio técnico, liderazgo operativo y capacidad para ejecutar una plataforma robusta, escalable y orientada a negocio.</p></div><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/damian_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>Damián Scheck</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Partner - Engineering / Mythology Labs</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Analista de Sistemas de Computación, Licenciado en Sistemas, desarrollador de software, Co-Founder y CTO de Mythology Labs. En GEOLAND, lidera la arquitectura técnica, la calidad del código y el desarrollo de una plataforma robusta, escalable y segura, preparada para crecer con estándares profesionales de ingeniería.</p></div></div>`,
+    text: `<div class='flex flex-col md:flex-row gap-16 justify-center items-start w-full max-w-[1200px] mx-auto mt-4'><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/juancarlos_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 scale-[1.25] origin-top [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>Juan Carlos Casalderrey</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Co-Founder & Engineering Strategy</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Arquitecto de sistemas y co-founder de Mythology Labs, con experiencia en desarrollo, consultoría técnica y plataformas escalables. En GEOLAND aporta criterio técnico, arquitectura operativa y visión de ingeniería para construir una plataforma robusta y orientada a negocio.</p></div><div class='flex flex-col items-center text-center w-full md:w-1/2'><img src='team/damian_transparent.png' class='w-48 h-48 md:w-64 md:h-64 object-cover object-top mb-8 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]' /><h3 style="font-family:'League Gothic',sans-serif;font-size:1.5rem;letter-spacing:0.12em;" class='text-white mb-2 uppercase'>Damián Scheck</h3><h4 class='text-geoland-blue tracking-[0.2em] text-[10px] md:text-xs uppercase mb-6' style="font-family:'Arimo',sans-serif;">Co-Founder & CTO</h4><p style="font-family:'Arimo',sans-serif;" class='text-white/60 text-xs md:text-sm leading-relaxed font-light text-center'>Analista de sistemas, desarrollador de software y CTO de Mythology Labs. En GEOLAND lidera la arquitectura técnica, la calidad del código y el desarrollo de una plataforma robusta, escalable y preparada para crecer con estándares profesionales de ingeniería.</p></div></div>`,
     backgroundMedia: "",
     overlayOpacity: 0,
     align: "center",
@@ -475,14 +421,7 @@ export const slides: SlideData[] = [
     backgroundMedia: "",
     overlayOpacity: 0
   },
-  {
-    id: 55,
-    title: "THE FUTURE BELONGS TO BETTER DECISIONS",
-    text: "",
-    variant: "titulo-chico",
-    backgroundMedia: "",
-    overlayOpacity: 0
-  },
+
   {
     id: 56,
     title: "GEOLAND",

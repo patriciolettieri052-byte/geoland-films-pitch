@@ -15,8 +15,8 @@ const PHASE1 = {
   tag: 'HOY · FASE 01',
   title: 'VALIDACIÓN PRIVADA',
   sub: 'MES 6',
-  stat: '4',
-  statLabel: 'CIUDADES EN VALIDACIÓN',
+  stat: '6',
+  statLabel: 'PRODUCTORAS VALIDANDO',
   statSub: 'Beta testers probando el sistema en mercados seleccionados.',
   items: [
     { title: 'MOTOR DE DECISIÓN', sub: 'Comparación de locaciones por variables reales.' },

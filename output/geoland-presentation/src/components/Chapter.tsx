@@ -8,6 +8,7 @@ import DiagramaExpansion from './DiagramaExpansion';
 import RoadmapCinematic from './RoadmapCinematic';
 import AdvisorsHud from './AdvisorsHud';
 import ValidationHud from './ValidationHud';
+import ProjectionsChart from './ProjectionsChart';
 
 interface ChapterProps {
   id: number;
@@ -20,7 +21,7 @@ interface ChapterProps {
   isItalic?: boolean;
   overline?: string;
   titleSize?: string;
-  variant?: "subtitulo" | "titulo" | "portada" | "portada81" | "portadafinal" | "texto" | "barras" | "barras-pro" | "apertura" | "apertura2" | "hub" | "backtest-stats" | "backtest-cities" | "numeric" | "business-units" | "reviews" | "neural-map" | "titulo-grande" | "titulo-chico" | "advisors" | "roadmap" | "soluciones-grid" | "diagrama-fuentes" | "diagrama-expansion" | "market" | "texto-arriba" | "titulo-cuerpo-bold" | "validation-hud";
+  variant?: "subtitulo" | "titulo" | "portada" | "portada81" | "portadafinal" | "texto" | "barras" | "barras-pro" | "apertura" | "apertura2" | "hub" | "backtest-stats" | "backtest-cities" | "numeric" | "business-units" | "reviews" | "neural-map" | "titulo-grande" | "titulo-chico" | "advisors" | "roadmap" | "soluciones-grid" | "diagrama-fuentes" | "diagrama-expansion" | "market" | "texto-arriba" | "titulo-cuerpo-bold" | "validation-hud" | "projections";
   align?: "left" | "center" | "right" | "center-left";
   maxWidth?: string;
   ctaUrl?: string;
@@ -823,6 +824,8 @@ const Chapter: React.FC<ChapterProps> = ({ id, title, overline, text, background
           </div>
         ) : variant === 'validation-hud' ? (
           <ValidationHud />
+        ) : variant === 'projections' ? (
+          <ProjectionsChart />
         ) : variant === 'advisors' ? (
           <AdvisorsHud title={title} text={text} />
         ) : variant === 'roadmap' ? (
